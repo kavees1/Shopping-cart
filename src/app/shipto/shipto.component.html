@@ -1,0 +1,189 @@
+<form [hidden]="show" (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <label>Recepient Name</label>
+    <input required class="form-control" name="name" [(ngModel)]="name"  #names="ngModel"/>
+    
+    <div *ngIf="names.invalid && (names.dirty || names.touched)"
+    class="alert alert-danger">
+  
+  <div *ngIf="names.errors.required">
+    Name is required.
+  </div>
+    </div>
+    <br/>
+    <label>Street Address 1</label>
+    <input type="text" required  name="addr1" [(ngModel)]="addr1" />
+    <br/>
+    <label>Street Address 2</label>
+    <input type="text" name="addr2" [(ngModel)]="addr2" />
+    <br/>
+    <label>City</label>
+    <input type="text" required  name="city" [(ngModel)]="city" />
+    <br/>
+    <label>Provice/State</label>
+    <input type="text" required  name="state" [(ngModel)]="state" />
+    <br/>
+    <label>Postal/Zip Code</label>
+    <input type="text" required  name="zip" [(ngModel)]="zip" />
+    <br/>
+    <label>Delivery Instructions</label>
+    <input type="text" name="delivery" [(ngModel)]="delivery"   #deli="ngModel"/>
+    
+    <br/>
+    <button [disabled]="!myForm.form.valid" type="submit">Submit</button>
+  </form>
+ 
+
+
+<!--  //this has validation
+  <form (submit)="onSubmit()" #myform="ngForm">
+    <label>Recipient Names: </label>
+    
+    
+    <input id="name" name="name" class="form-control"
+    required minlength="4" appForbiddenName="bob"
+    [(ngModel)]="name" #names="ngModel" >
+
+<div *ngIf="names.invalid && (names.dirty || names.touched)"
+  class="alert alert-danger">
+
+<div *ngIf="names.errors.required">
+  Name is required.
+</div>
+<div *ngIf="names.errors.minlength">
+  Name must be at least 4 characters long.
+</div>
+<div *ngIf="names.errors.forbiddenName">
+  Name cannot be Bob.
+</div>
+
+</div>
+
+    
+<br>
+
+<label>Street Address 1: </label>
+
+
+<input id="text1" name="text1" class="form-control"
+required minlength="4" appForbiddenName="bob"
+[(ngModel)]="addr1" #addr1s="ngModel" >
+
+<div *ngIf="addr1s.invalid && (addr1s.dirty || addr1s.touched)"
+class="alert alert-danger">
+
+<div *ngIf="addr1s.errors.required">
+Name is required.
+</div>
+<div *ngIf="addr1s.errors.minlength">
+Name must be at least 4 characters long.
+</div>
+<div *ngIf="addr1s.errors.forbiddenName">
+Name cannot be Bob.
+</div>
+
+</div>
+
+
+
+<br>
+
+<label>Street Address 2: </label>
+
+<input id="text2" name="text2" class="form-control"
+required minlength="4" appForbiddenName="bob"
+[(ngModel)]="addr2" #addr2s="ngModel" >
+
+<div *ngIf="addr2s.invalid && (addr2s.dirty || addr2s.touched)"
+class="alert alert-danger">
+
+<div *ngIf="addr2s.errors.required">
+Name is required.
+</div>
+<div *ngIf="addr2s.errors.minlength">
+Name must be at least 4 characters long.
+</div>
+<div *ngIf="addr2s.errors.forbiddenName">
+Name cannot be Bob.
+</div>
+
+</div>
+
+
+<br>
+<label>City: </label>
+
+<input id="text3" name="text3" class="form-control"
+required minlength="4" appForbiddenName="bob"
+[(ngModel)]="city" #citys="ngModel" >
+
+<div *ngIf="citys.invalid && (citys.dirty || citys.touched)"
+class="alert alert-danger">
+
+<div *ngIf="citys.errors.required">
+Name is required.
+</div>
+<div *ngIf="citys.errors.minlength">
+Name must be at least 4 characters long.
+</div>
+<div *ngIf="citys.errors.forbiddenName">
+Name cannot be Bob.
+</div>
+
+</div>
+
+<br>
+<label>Province/State: </label>
+
+
+
+<input id="text4" name="text4" class="form-control"
+required minlength="4" appForbiddenName="bob"
+[(ngModel)]="state" #states="ngModel" >
+
+<div *ngIf="states.invalid && (states.dirty || states.touched)"
+class="alert alert-danger">
+
+<div *ngIf="states.errors.required">
+Name is required.
+</div>
+<div *ngIf="states.errors.minlength">
+Name must be at least 4 characters long.
+</div>
+<div *ngIf="states.errors.forbiddenName">
+Name cannot be Bob.
+</div>
+
+</div>
+
+<br>
+<label>Postal/Zip Code: </label>
+
+
+<input id="text5" name="text5" class="form-control"
+required minlength="4" appForbiddenName="bob"
+[(ngModel)]="zip" #zips="ngModel" >
+
+<div *ngIf="zips.invalid && (zips.dirty || zips.touched)"
+class="alert alert-danger">
+
+<div *ngIf="zips.errors.required">
+Name is required.
+</div>
+<div *ngIf="zips.errors.minlength">
+Name must be at least 4 characters long.
+</div>
+<div *ngIf="zips.errors.forbiddenName">
+Name cannot be Bob.
+</div>
+
+</div>
+
+
+
+<br>
+<label>Delivery Instructions: </label>
+<input type="text" name="delivery"  [(ngModel)]="delivery" />  
+
+<br>
+    <button  class="button" type="submit"> Submit</button>
+  </form> -->

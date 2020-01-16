@@ -1,0 +1,17 @@
+<header>
+    <h6>Catagory</h6>
+  </header> 
+
+<br>
+<button class="button" mat-button (click) = "backClicked()">Back</button>
+<br>
+<br>
+<ol >
+    <li *ngFor="let data of empList">
+  
+      <a href="/product?id={{data.id}}"   routerlink="/product">{{ data.name }}
+   
+      </a><br>
+
+    </li>
+  </ol>

@@ -1,0 +1,25 @@
+<header>
+    <h6>Product</h6>
+  </header> 
+<br>
+<br>
+<button class="button" mat-button (click) = "backClicked()">Back</button>
+<br>
+<br>
+
+<ul>
+    <li *ngFor="let data of empList">
+  
+     <!--  <a href="/cart?item={price:{{data.cost}},id:{{data.id}},qty: 0 }"   routerlink="/cart">{{ data.name }}
+   
+      </a><br>  href="/cart"-->
+      
+      <a (click)="clicked()"    routerlink="/cart">
+       <b>Name: </b> {{ data.name }}<br>
+      <b> Cost: </b> {{data.cost}}<br>
+      <b> ID: </b> {{data.id}} <br>
+      
+      </a><br>
+      <button (click)="clicked()" >Add to Cart</button>
+    </li>
+  </ul>

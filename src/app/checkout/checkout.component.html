@@ -1,0 +1,59 @@
+
+  
+<div [hidden]="boolean_test">
+
+  <button class="button" mat-button (click) = "backClicked()">Back</button>
+
+ <br>
+ <br>
+ <div class="heading"> <h1>Order Details</h1> </div>
+<br>
+
+
+<br>
+
+    <table id="customers">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>QTY</th>
+            <th>Extended price</th>
+          </tr>
+    <tr *ngFor="let data of empList">
+       
+  <td>{{data.name}}</td>
+  <td>{{data.price}}</td>
+  <td>{{data.qty}}</td>
+  <td>{{data.extented_price}}</td>
+           
+ 
+
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Total: {{sum_extended_price}} </td>
+
+
+      </tr>
+  </table>
+  <br>
+  <!--<h4>The sum price is  {{sum_extended_price}}</h4> -->
+  <br>
+  <h4>Shipping Address</h4>
+  <p>Name: {{name}}</p>
+  <p>Street Address 1: {{addr1}}</p>
+  <p>Street Address 2: {{addr2}}</p>
+  <p>City: {{city}}</p>
+  <p>Provice/State: {{state}}</p>
+  <p>Postal/Zip Code: {{zip}}</p>
+  <p>Delivery Instructions: {{delivery}}</p>
+
+  <br>
+  <button class="button" mat-button (click) = 'continue_shopping()'>Continue Shopping</button>
+  <br>
+  <br>
+  <button class="button" mat-button (click) = 'checkout()'>Checkout</button> 
+</div>
+

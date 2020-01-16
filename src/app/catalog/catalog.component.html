@@ -1,0 +1,14 @@
+<!-- <p>works</p>
+<a routerLink="/dash">To Dash</a><br/> -->
+<ul  id="catalog_list">
+    <li *ngFor="let data of empList">
+  
+      <button  (click)="catagory_update(data)"  routerlink="/category">{{ data.name }} 
+     <!-- <a href="/category?id={{data.id}}" (click)="catagory_update(data)"  routerlink="/category">{{ data.name }}  -->
+      <!-- <a   routerlink="/category" >{{ data.name }} -->
+      </button> 
+
+    </li>
+    
+  </ul>
+ 

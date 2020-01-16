@@ -1,0 +1,35 @@
+<input id="name" name="name" class="form-control"
+required minlength="4" appForbiddenName="bob"
+[(ngModel)]="names" #name="ngModel" >
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+class="alert alert-danger">
+
+<div *ngIf="name.errors.required">
+Name is required.
+</div>
+<div *ngIf="name.errors.minlength">
+Name must be at least 4 characters long.
+</div>
+<div *ngIf="name.errors.forbiddenName">
+Name cannot be Bob.
+</div>
+
+</div>
+
+
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+<input type="text" name="x" [(ngModel)]="x" (change) = "change()"  />
+<br/>
+<div *ngIf="x==='bob'">
+<input type="text" name="y" [(ngModel)]="y" />
+<br/>
+</div>
+<button type="submit">ADD</button>
+<br>
+
+</form>
+<p [hidden]="show"> The sum if {{sum}} </p>
+<p [hidden]="show1"> The sum1 if {{sum1}} </p>
+
+<li><span (click)="increment()">{{atr1}}</span></li>

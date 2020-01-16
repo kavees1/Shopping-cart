@@ -1,0 +1,28 @@
+<div class="heading"><h1>Cart</h1> </div>
+<br>
+<br>
+<button class="button" mat-button (click) = "backClicked()">Back</button>
+<br>
+<br>
+    <table id="customers">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>QTY</th>
+            <th>QTY Update</th>
+            <th></th>
+          </tr>
+    <tr *ngFor="let data of empList">
+       
+  <td>{{data.name}}</td>
+  <td>{{data.price}}</td>
+  <td>{{data.qty}}</td>
+  <td><input id="{{data.id}}Ka" type="text" value="{{data.qty}}"  ></td>
+    
+ <td> <button  class="button" (click) = 'update(data)'>Update</button>  </td>
+ 
+
+    </tr>
+  </table>
+  <br>
+  <button class="button" mat-button (click) = 'checkout()'>Checkout</button>
